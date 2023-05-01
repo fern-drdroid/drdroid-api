@@ -10,7 +10,7 @@ groups:
         github:
           repository: fern-drdroid/drdroid-node
         config: 
-          namespaceExport: Cakework
+          namespaceExport: DrDroid
           
       - name: fernapi/fern-java-sdk
         version: 0.0.134
