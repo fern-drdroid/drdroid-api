@@ -9,6 +9,8 @@ groups:
           token: ${FERN_NPM_TOKEN}
         github:
           repository: fern-drdroid/drdroid-node
+        config: 
+          namespaceExport: Cakework
           
       - name: fernapi/fern-java-sdk
         version: 0.0.134
