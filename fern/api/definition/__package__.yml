@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+service: 
+ auth: true
+ base-path: /e/ingest/events/v3
+ endpoints:
+   publish: 
+    path: ""
+    method: POST
+    docs: Allows users to send events to Doctor Droid
+    display-name: Send Events
+    request: 
+      name: SendEventsRequest
+      body: 
+        properties:
+          data: SendEventRequestData
+
+types:
+  SendEventRequestData: 
+    properties:
+      events: list<Event>
+  Event: 
+    properties:
+        name: string
+        timestamp: optional<datetime>
+        kvs: map<string, unknown>
+  
+
+
+
