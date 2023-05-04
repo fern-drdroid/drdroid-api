@@ -2,7 +2,7 @@ groups:
   publish:
     generators:
       - name: fernapi/fern-typescript-sdk
-        version: 0.2.2
+        version: 0.5.18
         output:
           location: npm
           package-name: '@fern-api/drdroid'
@@ -10,4 +10,4 @@ groups:
         github:
           repository: fern-drdroid/drdroid-node
         config: 
-          namespaceExport: DrDroidApi
+          namespaceExport: DrDroid
