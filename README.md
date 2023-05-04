@@ -3,7 +3,6 @@
 Tagging a release on this repository will update the:
 
 - [Node.js SDK repo](https://github.com/fern-drdroid/drdroid-node)
-- [Java SDK repo](https://github.com/fern-drdroid/drdroid-java)
 
 ## What is in this repository?
 
