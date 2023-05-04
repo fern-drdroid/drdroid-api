@@ -2,13 +2,13 @@
 
 service: 
  auth: true
- base-path: /e/ingest/events/v3
+ base-path: /e/ingest/events/v2
  endpoints:
    publish: 
     path: ""
     method: POST
     docs: Allows users to send events to Doctor Droid
-    display-name: Send Events
+    display-name: Ingestion V2
     request: 
       name: SendEventsRequest
       body: 
@@ -19,12 +19,61 @@ types:
   SendEventRequestData: 
     properties:
       events: list<Event>
+
   Event: 
     properties:
         name: string
-        timestamp: optional<datetime>
-        kvs: map<string, unknown>
+        timestamp: long
+        kvs: map<string, Value>
   
+  Value: 
+    discriminated: false
+    union: 
+     - StringValue
+     - BoolValue
+     - DoubleValue
+     - IntValue
+     - DatetimeValue
+     - ArrayValue
+     - DictValue
+     - ObjValue
+  
+  StringValue: 
+    properties: 
+      string_value: string
+  
+  BoolValue: 
+    properties: 
+      bool_value: boolean
+  
+  IntValue: 
+    properties:   
+      int_value: integer
+  
+  DoubleValue: 
+    properties: 
+      double_value: double
+  
+  DatetimeValue:
+    properties: 
+      datetime_value: datetime
 
+  ArrayValue: 
+    properties: 
+      array_value: ArrayValues
+  ArrayValues: 
+    properties: 
+      values: list<Value>
+  
+  KeyValue: 
+    properties: 
+      key: string
+      value: Value
 
-
+  DictValue: 
+    properties: 
+      kvlist_value: list<KeyValue>
+  
+  ObjValue: 
+    properties: 
+      kvlist_value: list<KeyValue>

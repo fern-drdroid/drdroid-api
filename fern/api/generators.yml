@@ -10,14 +10,4 @@ groups:
         github:
           repository: fern-drdroid/drdroid-node
         config: 
-          namespaceExport: DrDroid
-          
-      - name: fernapi/fern-java-sdk
-        version: 0.0.134
-        output:
-          location: maven
-          coordinate: io.github.fern-api:drdroid
-          username: ${FERN_MAVEN_USERNAME}
-          password: ${FERN_MAVEN_TOKEN}
-        github:
-          repository: fern-drdroid/drdroid-java 
+          namespaceExport: DrDroidApi
