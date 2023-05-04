@@ -23,7 +23,7 @@ types:
   Event: 
     properties:
         name: string
-        timestamp: long
+        timestamp: optional<long>
         kvs: map<string, Value>
   
   Value: 
