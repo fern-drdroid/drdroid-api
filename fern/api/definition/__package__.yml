@@ -4,7 +4,7 @@ service:
  auth: true
  base-path: /e/ingest/events/v2
  endpoints:
-   publish: 
+   sendEvent: 
     path: ""
     method: POST
     docs: Allows users to send events to Doctor Droid
